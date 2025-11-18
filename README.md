@@ -7,12 +7,13 @@
     This is a built for test purpose only and does not include the extensive and comprehensive data models.
     This is based on only the daya provided by the Amplify team.
 
-## dbt CLI Development Setup
 **Assumption:**
 1. You have already cloned the repo (https://github.com/deep-bkm/amplify) locally
 2. You have access to the Snowflake instance, if you need access contact deep.bkm@gmail.com
 3. You are on a windows machine, if you are on MacOS, please contact deep.bkm@gmail.com
 4. Your profiles.yml is setup correctly. If you need help contact deep.bkm@gmail.com
+
+## dbt CLI Development Setup
 
 1. Run  `python -m venv .venv` to create a virtual environment.
 2. Run `.venv/Scripts/activate` to activate virtual environment on windows OS.
