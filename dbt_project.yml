@@ -1,0 +1,35 @@
+name: 'amplify'
+version: '1.0.0'
+config-version: 2
+
+# This defines which connection profile from your profiles.yml to use.
+profile: 'amplify'
+
+# Configuration for where to find different resource types
+model-paths: ["models"]
+seed-paths: ["seeds"]
+# test-paths: ["tests"]
+# macro-paths: ["macros"]
+# snapshot-paths: ["snapshots"]
+
+# Where dbt writes compiled files, logs, and other artifacts
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuration for models
+models:
+  amplify:
+    staging:
+      +materialized: view
+      +schema: staging_amplify
+    intermediate:
+      +materialized: table
+      +schema: intermediate
+    mart_core:
+      +materialized: table
+      +schema: mart_core
+    reporting:
+      +materialized: table
+      +schema: reporting

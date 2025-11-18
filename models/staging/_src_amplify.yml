@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: product
+    schema: raw_amplify
+    description: All the data ingested from amplify get stored within this schema
+
+    tables:
+      - name: product
+        description: This table includes all the event streaming data for the amplify product
+        config:
+          freshness:
+            warn_after: {count: 24, period: hour} #can cahnge after talking with the stakeholder
+            error_after: {count: 48, period: hour} #can change after talking with the stakeholder
