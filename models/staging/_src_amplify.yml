@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: product
+  - name: raw_amplify
     schema: raw_amplify
     description: All the data ingested from amplify get stored within this schema
 

@@ -3,3 +3,5 @@ logs/
 .vscode/
 dbt.exe
 .python-version
+dbt_packages/
+target/

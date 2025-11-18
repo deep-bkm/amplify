@@ -1,0 +1,40 @@
+{
+    "id": "64c41d1967e4ec94fce6072d",
+    "common": {
+        "userId": "616700523571",
+        "verb": "selected",
+        "object": "button",
+        "product": "science",
+        "timestamp": "2023-01-01 08:01:01.00"
+    }
+   },
+   {
+    "id": "43c41d1967e4echdgtw423072d",
+        "common": {
+        "userId": "616700523341",
+        "verb": "selected",
+        "object": "button",
+        "product": "science",
+        "timestamp": "2023-01-01 09:02:01.00"
+    }
+   },
+   {
+    "id": "72a63d1439b2ff82cda8976a",
+        "common": {
+        "userId": "616700523571",
+        "verb": "selected",
+        "object": "button",
+        "product": "ela",
+        "timestamp": "2023-01-01 07:01:01.00"
+    }
+   },
+   {
+    "id": "71a35d1439b2gf52cda8976a",
+        "common": {
+        "userId": "616700523571",
+        "verb": "selected",
+        "object": "button",
+        "product": "ela",
+        "timestamp": "2023-01-01 09:01:01.00"
+    }
+   }
