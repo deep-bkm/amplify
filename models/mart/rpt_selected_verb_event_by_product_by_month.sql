@@ -22,7 +22,7 @@ final as (
         dim_product.product_name, --by product
         --either of below can be used to pull 'by month' depending on the data_type needs to be in a date format or text
         --year(fct_user_event.event_ts) || '-' || lpad(month(fct_user_event.event_ts), 2, 0) as year_month -- by month with a text data type       
-        date_trunc('month', fct_user_event.event_ts)::date as month_first_day -- by month with a date datatype
+        date_trunc('month', fct_user_event.event_ts)::date as event_month_dt -- by month with a date datatype
 
     from fct_user_event
     left join dim_verb
@@ -33,5 +33,7 @@ final as (
     group by all
 )
 
-select *
+select 
+    *,
+    convert_timezone('UTC', current_timestamp()) as updated_at_ts
 from final

@@ -37,5 +37,7 @@ final as (
     where event_id_cnt > 5 --users with more than 5 events 
 )
 
-select *
+select 
+    *,
+    convert_timezone('UTC', current_timestamp()) as updated_at_ts    
 from final

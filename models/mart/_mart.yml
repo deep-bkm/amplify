@@ -1,0 +1,90 @@
+version: 2
+
+models:
+  - name: rpt_last_month_total_event_by_user_verb_object_segmented
+    description: >
+        This report provides the total count of events for the last month segmented by verb and object.
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: user_id
+        description: "{{ doc('user_id') }}"
+      - name: verb_name
+        description: "{{ doc('verb_name') }}"
+      - name: object_name
+        description: "{{ doc('object_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: rpt_last_week_5_event_by_user_by_product
+    description: >
+        This report provides the number of users with more than 5 events last week by product
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: user_id
+        description: "{{ doc('user_id') }}"
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: rpt_last_week_total_event_by_user_by_product
+    description: >
+        This report provides the number Events per user per product last week.
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: user_id
+        description: "{{ doc('user_id') }}"
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: rpt_selected_verb_event_by_product_by_month
+    description: >
+        This report provides the number of Selected Verb events by product by month
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: verb_name
+        description: "{{ doc('verb_name') }}"
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+      - name: event_month_dt
+        description: The first day of the month for which the event occurred.
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: rpt_total_event_by_product_by_month
+    description: >
+        This report provides the total events by product by month
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+      - name: event_month_dt
+        description: The first day of the month for which the event occurred.
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: rpt_total_event_by_user_by_month
+    description: >
+        This report provides the total events by users by month
+
+    columns:
+      - name: event_id_cnt
+        description: Count of unique event IDs
+      - name: user_id
+        description: "{{ doc('user_id') }}"
+      - name: event_month_dt
+        description: The first day of the month for which the event occurred.
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"                              

@@ -30,5 +30,7 @@ final as (
     group by all
 )
 
-select *
+select 
+    *,
+    convert_timezone('UTC', current_timestamp()) as updated_at_ts
 from final

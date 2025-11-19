@@ -14,7 +14,7 @@ final as (
     select 
         count(fct_user_event.event_id_sk) as event_id_cnt, --event_id count
         dim_product.product_name, --by product
-        date_trunc('month', fct_user_event.event_ts::date) as month_first_day -- by month with a date datatype
+        date_trunc('month', fct_user_event.event_ts::date) as event_month_dt -- by month with a date datatype
         
     from fct_user_event
     left join dim_product
@@ -23,5 +23,7 @@ final as (
     order by 2, 3 desc
 )
 
-select *
+select 
+    *,
+    convert_timezone('UTC', current_timestamp()) as updated_at_ts
 from final
