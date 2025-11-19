@@ -27,13 +27,7 @@ python -m venv .venv
 - PowerShell (recommended on Windows):
 
 ```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-- Command Prompt (Windows):
-
-```cmd
-.venv\Scripts\activate.bat
+.venv/Scripts/activate
 ```
 
 - macOS / Linux:
