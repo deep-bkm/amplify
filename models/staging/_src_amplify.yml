@@ -10,5 +10,5 @@ sources:
         description: This table includes all the user event data for the amplify product
         config:
           freshness:
-            warn_after: {count: 24, period: hour} #can cahnge after talking with the stakeholder
+            warn_after: {count: 24, period: hour} #can change after talking with the stakeholder
             error_after: {count: 48, period: hour} #can change after talking with the stakeholder

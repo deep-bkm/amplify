@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: dim_object
+    description: > 
+      This is a dimension table which contains all the object related information from the amplify user events.
+
+    columns:
+      - name: object_sk
+        description: Surrogate key for the object
+        data_tests:
+          - unique
+          - not_null
+      - name: object_name
+        description: "{{ doc('object_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: dim_product
+    description: > 
+      This is a dimension table which contains all the product related information from the amplify user events.
+
+    columns:
+      - name: product_sk
+        description: Surrogate key for the product
+        data_tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"   
+
+  - name: dim_user
+    description: >
+      This is a dimension table which contains all the user related information from the amplify user events.
+
+    columns:
+      - name: user_sk
+        description: Surrogate key for the user
+        data_tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "({ doc('user_id') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: dim_verb
+    description: >
+      This is a dimension table which contains all the verb related information from the amplify user events.
+
+    columns:
+      - name: verb_sk
+        description: Surrogate key for the verb
+        data_tests:
+          - unique
+          - not_null
+      - name: verb_name
+        description: "{{ doc('verb_name') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"
+
+  - name: fct_user_event
+    description: >
+      This is a fact table which contains all the user event related information from the amplify user events.
+
+    columns:
+      - name: event_id_sk
+        description: Surrogate key for the event
+      - name: object_sk
+        description: Foreign key to dim_object
+      - name: product_sk
+        description: Foreign key to dim_product
+      - name: user_sk
+        description: Foreign key to dim_user
+      - name: verb_sk
+        description: Foreign key to dim_verb
+      - name: event_id
+        description: "{{ doc('event_id') }}"
+      - name: event_ts
+        description: "{{ doc('event_ts') }}"
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"

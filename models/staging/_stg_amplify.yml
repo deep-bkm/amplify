@@ -12,18 +12,17 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: object
-        description: tbd
+      - name: object_name
+        description: "{{ doc('object_name') }}"
       - name: product_name
-        description: Name of the product, currently populated with values 'science' and 'ela'
+        description: "{{ doc('product_name') }}"
       - name: user_id
-        description: User ID
-      - name: verb
-        description: This field determines the action of the uer. e.g. selected
+        description: "{{ doc('user_id') }}"
+      - name: verb_name
+        description: "{{ doc('verb_name') }}"
       - name: event_ts
-        description: A timestamp field that determines the timestamp when the event occurred.
+        description: "{{ doc('event_ts') }}"
       - name: source_name
         description: This is a metafield which identifies the source, in this case 'amplify'
-      - name: dw_insert_ts
-        description: This field provide us the UTC timestamp when this table/view was built 
-    
+      - name: updated_at_ts
+        description: "{{ doc('updated_at_ts') }}"    

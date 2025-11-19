@@ -17,7 +17,7 @@ final as (
         product_properties:common:timestamp::timestamp as event_ts, --determine if this is local_ts or utc
         -- metafields
         'amplify' as source_name,
-        convert_timezone('UTC', current_timestamp()) as dw_insert_ts
+        convert_timezone('UTC', current_timestamp()) as updated_at_ts
     from raw_amplify
 
 )
