@@ -1,0 +1,27 @@
+--e. total events by product by month
+
+with fct_user_event as (
+    select *
+    from {{ ref('fct_user_event') }}
+),
+
+dim_product as (
+    select *
+    from {{ ref('dim_product') }}
+),
+
+final as (
+    select 
+        count(fct_user_event.event_id_sk) as event_id_cnt, --event_id count
+        dim_product.product_name, --by product
+        date_trunc('month', fct_user_event.event_ts::date) as month_first_day -- by month with a date datatype
+        
+    from fct_user_event
+    left join dim_product
+    on fct_user_event.product_sk = dim_product.product_sk
+    group by all
+    order by 2, 3 desc
+)
+
+select *
+from final
