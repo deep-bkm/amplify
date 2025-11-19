@@ -2,6 +2,7 @@ with stg_amplify__product as (
 
     select product_name
     from {{ ref('stg_amplify__product') }}
+    where product_name is not null
     group by all
 
 ),
