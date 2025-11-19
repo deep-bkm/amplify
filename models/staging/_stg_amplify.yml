@@ -1,14 +1,14 @@
 version: 2
 
 models:
-  - name: stg_amplify__product
+  - name: stg_amplify__user_event
     description: > 
-      This is the staging model for the amplify product.
-      This model parses key-pair json in flattened attributes
+      This is the staging model for the events by an user on the amplify product.
+      This model parses key-pair json in flattened attributes.
 
     columns:
       - name: id
-        description: tbd
+        description: Event ID base on the amplify event activity
         data_tests:
           - unique
           - not_null

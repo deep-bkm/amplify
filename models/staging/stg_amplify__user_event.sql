@@ -1,8 +1,8 @@
-/*staging model for event streamed data for product*/
+/*staging model for event streamed data for the amplify product*/
 with raw_amplify as (
 
     select *
-    from {{ source('raw_amplify', 'product')}}
+    from {{ source('raw_amplify', 'user_event')}}
 
 ),
 

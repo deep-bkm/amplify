@@ -27,12 +27,9 @@ models:
     intermediate:
       +materialized: table
       +schema: intermediate
-    mart_core:
+    core_wh:
       +materialized: table
-      +schema: mart_core
-    reporting:
+      +schema: core_wh
+    mart:
       +materialized: table
-      +schema: reporting
-
-vars:
-  prod_database: 'prod_amplify'
+      +schema: mart
