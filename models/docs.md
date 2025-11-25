@@ -23,5 +23,5 @@ Timestamp of the event without no timezone.
 {% enddocs %}
 
 {% docs updated_at_ts %}
-This field provide us the UTC timestamp when this table/view was built
+This field provide us the UTC timestamp when this table/view was built.
 {% enddocs %} 
