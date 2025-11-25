@@ -1,28 +1,41 @@
-name: sync_main_into_dev
+name: Auto Merge main into dev (Using PAT Secret)
 
 on:
-  push:
+  # Triggers when a Pull Request is closed
+  pull_request:
+    # Specifically targets PRs merged into the 'main' branch
     branches:
       - main
 
 jobs:
   auto_merge:
-    runs-on: ubuntu-latest    
+    # IMPORTANT: Only run the job if the PR was actually merged
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - name: Create Pull Request from main to dev
+        # Uses the repo-sync/pull-request action to create the new PR
+        uses: repo-sync/pull-request@v2
         with:
-          fetch-depth: 0  # Fetch all history for all branches
-          # Use the default GitHub token for authentication
-          GITHUB_TOKEN: ${{ secrets.AUTO_MERGE_TOKEN }}
-      
-      - name: configure_git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions@github.com"
-
-      - name: merge_main_into_dev
-        run: |
-          git checkout dev
-          git merge origin/main --no-edit
-          git push origin dev
+          # Use your custom secret containing the PAT you generated.
+          # The PAT must have the 'repo' scope enabled.
+          GITHUB_TOKEN: ${{ secrets.AUTO_MERGE_TOKEN }} 
+          
+          # The source branch is where the changes came from (main)
+          source_branch: "main"
+          
+          # The destination branch is where the changes will go (dev)
+          destination_branch: "dev"
+          
+          # Set a clear title for the automatically created PR
+          pr_title: "🤖 Auto-Merge: main changes into dev"
+          
+          # Add a label to easily identify auto-generated PRs
+          pr_label: "auto-merge"
+          
+          # Auto-merge the PR if there are no conflicts
+          auto_merge: true 
+          
+          # Set the auto-merge method
+          auto_merge_method: "merge"
