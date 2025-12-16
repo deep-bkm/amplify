@@ -23,6 +23,6 @@ models:
       - name: event_ts
         description: "{{ doc('event_ts') }}"
       - name: source_name
-        description: This is a metafield which identifies the source, in this case 'amplify'
+        description: This is a metafield which identifies the source, in this case 'amplify'.
       - name: updated_at_ts
         description: "{{ doc('updated_at_ts') }}"    
